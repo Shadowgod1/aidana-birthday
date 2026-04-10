@@ -677,16 +677,48 @@ section {
     border: 10px solid #fffcf8;
     border-bottom: 40px solid #fffcf8;
     background: #fffcf8;
+    pointer-events: none;
 }
 .stack-item.active {
     opacity: 1;
-    transform: scale(1) translateY(0) rotate(calc(var(--angle, 0) * 1deg));
+    transform: scale(1) translateY(0) rotate(0deg);
     z-index: 10;
+    pointer-events: auto;
 }
-.stack-item.fadeOut {
+.stack-item.next1 {
+    opacity: 0.8;
+    z-index: 9;
+    transform: scale(0.95) translateY(15px) rotate(4deg) translateX(15px);
+}
+.stack-item.next2 {
+    opacity: 0.5;
+    z-index: 8;
+    transform: scale(0.9) translateY(25px) rotate(-4deg) translateX(-15px);
+}
+.stack-item.hidden {
     opacity: 0;
-    transform: scale(1.05) translateY(-30px);
-    z-index: 11;
+    z-index: 0;
+    transform: scale(0.8) translateY(40px);
+}
+
+.gallery-counter {
+    background: rgba(255,107,152,0.8);
+    color: white;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(255,107,152,0.4);
+}
+.pulse-icon {
+    animation: pulseIcon 1.5s infinite;
+}
+@keyframes pulseIcon {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 
 /* --- NEW FIXES: Video Cinema --- */
@@ -792,6 +824,123 @@ section {
     25% { transform: translateX(-15px); }
     50% { transform: translateX(15px); }
     75% { transform: translateX(-15px); }
+}
+
+/* Jaw-dropping Premium CSS Cake */
+.premium-cake {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    margin: 50px auto;
+    transform: translateY(0);
+    animation: floatingCake 3s ease-in-out infinite;
+}
+@keyframes floatingCake {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.cake-glow {
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(255,107,152,0.3) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+    animation: pulseGlow 2s infinite alternate;
+}
+@keyframes pulseGlow {
+    from { transform: translate(-50%, -50%) scale(0.9); opacity: 0.8; }
+    to { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+}
+
+.layer-bottom, .layer-middle, .layer-top {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    box-shadow: inset 0 -5px 15px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.1);
+}
+.layer-bottom { width: 220px; height: 60px; bottom: 0; background: linear-gradient(145deg, #ff4e85, #d93d70); }
+.layer-middle { width: 180px; height: 60px; bottom: 60px; background: linear-gradient(145deg, #ff6b98, #e65c87); }
+.layer-top { 
+    width: 140px; height: 60px; bottom: 120px; 
+    background: #fffcf8; 
+    box-shadow: inset 0 -3px 10px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 5;
+}
+
+.cake-stand {
+    position: absolute;
+    bottom: -15px; left: 50%; transform: translateX(-50%);
+    width: 280px; height: 15px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+}
+
+.icing-drip {
+    position: absolute;
+    background: #fffcf8;
+    width: 18px;
+    border-radius: 0 0 10px 10px;
+    bottom: -15px;
+    box-shadow: inset -2px -2px 5px rgba(0,0,0,0.05);
+}
+.d1 { height: 35px; left: 10px; }
+.d2 { height: 50px; left: 40px; }
+.d3 { height: 25px; left: 75px; }
+.d4 { height: 45px; left: 105px; }
+.d5 { height: 30px; left: 120px; }
+
+.super-candle {
+    position: absolute;
+    width: 10px;
+    height: 45px;
+    background: repeating-linear-gradient(45deg, #fff, #fff 5px, #ff4e85 5px, #ff4e85 10px);
+    bottom: 180px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    z-index: 6;
+}
+.c1 { left: 45px; transform: rotate(-5deg); bottom: 175px; }
+.c2 { left: 115px; }
+.c3 { left: 185px; transform: rotate(5deg); bottom: 175px; }
+
+.super-flame {
+    position: absolute;
+    top: -20px; left: 50%;
+    transform: translateX(-50%);
+    width: 15px; height: 22px;
+    background: #ffcc00;
+    border-radius: 50% 50% 40% 40%;
+    box-shadow: 0 0 15px #ffcc00, 0 0 30px #ff9900, 0 0 50px #ff0000;
+    animation: superFlicker 0.4s infinite alternate;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+@keyframes superFlicker {
+    0% { transform: translateX(-50%) scale(1) rotate(-3deg); opacity: 1; }
+    100% { transform: translateX(-50%) scale(1.1) rotate(3deg); opacity: 0.9; }
+}
+
+.super-flame.extinguished {
+    opacity: 0;
+    transform: translateX(-50%) scale(0) translateY(-30px);
+    box-shadow: none;
+    animation: none;
+}
+.smoke {
+    position: absolute;
+    top: -25px; left: 50%; transform: translateX(-50%);
+    width: 12px; height: 12px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    filter: blur(3px);
+    animation: riseSmoke 1.5s forwards;
+}
+@keyframes riseSmoke {
+    0% { transform: translateX(-50%) translateY(0) scale(1); opacity: 0.8; }
+    100% { transform: translateX(-50px) translateY(-50px) scale(3); opacity: 0; }
 }
 
 /* --- NEW FIXES: Rose Petals --- */
