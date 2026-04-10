@@ -180,7 +180,10 @@ const qBtn = document.getElementById('multi-quest-btn');
 const qError = document.getElementById('multi-quest-error');
 const stageSuccess = document.getElementById('quest-stage-success');
 const nextBtn = document.getElementById('next-stage-btn');
+
 const biometricsContainer = document.getElementById('biometrics-container');
+const cakeContainer = document.getElementById('cake-container');
+const blowBtn = document.getElementById('blow-candles-btn');
 
 let selectedChoice = null;
 
@@ -194,11 +197,11 @@ function loadQuestStage() {
     if(qInput) qInput.classList.remove('shake');
     
     if (currentQuestStage >= questStages.length) {
-        // ALL STAGES COMPLETED, REVEAL BOSS (BIOMETRICS)
+        // УРОВНИ ПРОЙДЕНЫ -> ПОКАЗАТЬ ОТПЕЧАТОК
         questContainer.style.opacity = '0';
         setTimeout(() => {
             questContainer.style.display = 'none';
-            if(biometricsContainer) biometricsContainer.style.display = 'block';
+            if (biometricsContainer) biometricsContainer.style.display = 'block';
             window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         }, 500);
         return;
@@ -285,21 +288,85 @@ window.addEventListener('DOMContentLoaded', () => {
     loadQuestStage();
 });
 
+// Cake Blowing Logic (Standalone Mode)
+if (blowBtn) {
+    blowBtn.addEventListener('click', () => {
+        const flames = document.querySelectorAll('.super-flame');
+        flames.forEach(f => {
+            f.classList.add('extinguished');
+            const smoke = document.createElement('div');
+            smoke.classList.add('smoke');
+            f.parentElement.appendChild(smoke);
+        });
+        
+        blowBtn.style.transform = 'scale(0)';
+        
+        setTimeout(() => {
+            blowBtn.style.display = 'none';
+            const wishText = document.getElementById('cake-wish-text');
+            if(wishText) wishText.style.display = 'block';
+            
+            // Little confetti
+            if (window.confetti) {
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            }
+            
+            // Scroll down automatically after a moment to the final gift section
+            setTimeout(() => {
+                const nextSec = document.getElementById('gift-section');
+                if(nextSec) nextSec.scrollIntoView({ behavior: 'smooth' });
+            }, 3000);
+        }, 1000);
+    });
+}
+
 // Clickable Photo Stack Gallery Logic
 const stack = document.getElementById('photo-stack');
 const photos = document.querySelectorAll('.stack-item');
+const counter = document.getElementById('photo-counter');
 let currentPhotoIndex = 0;
+
+function updatePhotoStack() {
+    if (!photos || photos.length === 0) return;
+    
+    photos.forEach((photo, i) => {
+        photo.classList.remove('active', 'next1', 'next2', 'hidden');
+        
+        if (i === currentPhotoIndex) {
+            photo.classList.add('active');
+        } else if (i === (currentPhotoIndex + 1) % photos.length) {
+            photo.classList.add('next1');
+        } else if (i === (currentPhotoIndex + 2) % photos.length) {
+            photo.classList.add('next2');
+        } else {
+            photo.classList.add('hidden');
+        }
+    });
+
+    if (counter) {
+        counter.innerText = `${currentPhotoIndex + 1} / ${photos.length}`;
+    }
+}
+
 if (stack && photos.length > 0) {
+    // Initialize the stack layout
+    updatePhotoStack();
+
     stack.addEventListener('click', () => {
-        const current = photos[currentPhotoIndex];
-        current.classList.remove('active');
-        current.classList.add('fadeOut');
+        // Quick visual pop effect on the active one
+        const activePhoto = photos[currentPhotoIndex];
+        activePhoto.style.transform = 'rotate(0) scale(1.05) translateY(-10px)';
+        activePhoto.style.opacity = '0';
         
-        currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
-        
-        const next = photos[currentPhotoIndex];
-        next.classList.remove('fadeOut');
-        next.classList.add('active');
+        setTimeout(() => {
+            activePhoto.style.transform = ''; // reset inline style
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            updatePhotoStack();
+        }, 150); // fast transition before real CSS kicks in
     });
 }
 
