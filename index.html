@@ -118,8 +118,8 @@
     <section class="gallery-section" id="gallery">
         <h2 class="section-title" data-aos="fade-down">Самая красивая девочка во вселенной</h2>
         <div class="photo-stack" id="photo-stack" data-aos="zoom-in" data-aos-duration="1000">
-            <!-- 8 User Uploaded Photos -->
-            <img src="1.jpg" class="stack-item active" alt="Memory 1">
+            <!-- 15 User Uploaded Photos -->
+            <img src="1.jpg" class="stack-item" alt="Memory 1">
             <img src="2.jpg" class="stack-item" alt="Memory 2">
             <img src="3.jpg" class="stack-item" alt="Memory 3">
             <img src="4.jpg" class="stack-item" alt="Memory 4">
@@ -127,8 +127,15 @@
             <img src="6.jpg" class="stack-item" alt="Memory 6">
             <img src="7.jpg" class="stack-item" alt="Memory 7">
             <img src="8.jpg" class="stack-item" alt="Memory 8">
+            <img src="9.jpg" class="stack-item" alt="Memory 9">
+            <img src="10.jpg" class="stack-item" alt="Memory 10">
+            <img src="11.jpg" class="stack-item" alt="Memory 11">
+            <img src="12.jpg" class="stack-item" alt="Memory 12">
+            <img src="13.jpg" class="stack-item" alt="Memory 13">
+            <img src="14.jpg" class="stack-item" alt="Memory 14">
+            <img src="15.jpg" class="stack-item" alt="Memory 15">
         </div>
-        <p class="gallery-hint" data-aos="fade-up">Просто кликай по фото ❤️</p>
+        <p class="gallery-hint" data-aos="fade-up"><i class="fas fa-hand-pointer pulse-icon"></i> Листай фото кликом! ❤️</p>
     </section>
 
     <!-- КИНОТЕАТР (ВИДЕО) -->
@@ -164,6 +171,34 @@
             <div id="jar-note" class="note-hidden">
                 <p id="note-text" style="font-size: 1.4rem; font-weight: 500; font-family: 'Playfair Display', serif; color: #a60039;"></p>
             </div>
+        </div>
+    </section>
+
+    <!-- ПРАЗДНИЧНЫЙ ТОРТ (ОТДЕЛЬНАЯ СЕКЦИЯ) -->
+    <section class="cake-standalone-section" id="cake-standalone" style="min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.1); padding: 50px 0;">
+        <div id="cake-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;" data-aos="zoom-in">
+            <h3 style="color: #ff6b98; font-size: 2.2rem; margin-bottom: 50px; text-shadow: 0 0 15px rgba(255,107,152,0.5); text-align: center;">Твои сладкие 20!<br>Загадай самое заветное желание! ✨</h3>
+            
+            <div class="premium-cake">
+                <div class="cake-glow"></div>
+                <div class="super-candle c1"><div class="super-flame"></div></div>
+                <div class="super-candle c2"><div class="super-flame"></div></div>
+                <div class="super-candle c3"><div class="super-flame"></div></div>
+                
+                <div class="layer-top">
+                    <div class="icing-drip d1"></div>
+                    <div class="icing-drip d2"></div>
+                    <div class="icing-drip d3"></div>
+                    <div class="icing-drip d4"></div>
+                    <div class="icing-drip d5"></div>
+                </div>
+                <div class="layer-middle"></div>
+                <div class="layer-bottom"></div>
+                <div class="cake-stand"></div>
+            </div>
+            
+            <button id="blow-candles-btn" class="glass-btn" style="margin-top: 60px; padding: 15px 50px; font-size: 1.4rem; z-index: 10; animation: pulseIcon 2s infinite;">Задуть свечи 🌬️</button>
+            <p id="cake-wish-text" style="display: none; margin-top: 30px; font-size: 1.5rem; color: #fff; font-style: italic;">Желание отправлено во Вселенную! Листай ниже 👇</p>
         </div>
     </section>
 
@@ -217,6 +252,33 @@
                 </div>
                 <p id="hold-text" style="font-size: 1.2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Удерживай!</p>
             </div>
+        </div>
+        </div>
+
+        <!-- ПРАЗДНИЧНЫЙ ТОРТ (Появляется после биометрии) -->
+        <div id="cake-container" style="display: none; flex-direction: column; align-items: center; justify-content: center; margin-top: 40px;" data-aos="zoom-in">
+            <h3 style="color: #ff6b98; font-size: 2rem; margin-bottom: 20px;">Идентификация пройдена! Загадай желание...</h3>
+            
+            <div class="css-cake">
+                <!-- Свечи -->
+                <div class="candle candle-1"><div class="flame"></div></div>
+                <div class="candle candle-2"><div class="flame"></div></div>
+                <div class="candle candle-3"><div class="flame"></div></div>
+                
+                <!-- Слои торта -->
+                <div class="cake-top"></div>
+                <div class="cake-middle"></div>
+                <div class="cake-bottom"></div>
+                <!-- Глазурь и потеки -->
+                <div class="drip drip-1"></div>
+                <div class="drip drip-2"></div>
+                <div class="drip drip-3"></div>
+                <div class="drip drip-4"></div>
+                <!-- Тарелка -->
+                <div class="cake-plate"></div>
+            </div>
+            
+            <button id="blow-candles-btn" class="glass-btn" style="margin-top: 40px; padding: 15px 50px; font-size: 1.4rem; z-index: 10;">Задуть свечи 🌬️</button>
         </div>
     </section>
 
