@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Айдана, с днём рождения! 💖</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="progress-bar" id="progress-bar"></div>
+    <div id="particles-js"></div>
+
+    <!-- Background Music -->
+    <!-- Музыка: Пожалуйста, положите файл с названием music.mp3 в эту папку -->
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+    <button id="music-btn" class="glass-btn" style="border-radius:30px; padding:12px 25px;">
+        <i class="fas fa-play"></i> <span class="music-text">Включи музыку</span>
+    </button>
+
+    <!-- Parallax Hero -->
+    <header class="hero" id="hero">
+        <div class="hero-content glass-card" data-aos="zoom-in" data-aos-duration="1500">
+            <h1 class="typing-container"><span id="typing-text"></span><span class="cursor">|</span></h1>
+            <p class="subtitle" data-aos="fade-up" data-aos-delay="1000">Ты — самое прекрасное, что со мной случалось</p>
+            <div class="scroll-down" data-aos="fade-up" data-aos-delay="1500">
+                <span>Листай вниз, чтобы узнать больше</span>
+                <i class="fas fa-chevron-down bounce"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- СЧЕТЧИК СЧАСТЬЯ -->
+    <section class="counter-section" id="counter" style="min-height: 50vh;">
+        <h2 class="section-title" data-aos="fade-down" style="margin-bottom: 20px;">Время нашего счастья</h2>
+        <p style="font-size:1.3rem; margin-bottom: 30px; text-align:center;" data-aos="fade-up">Мы вместе уже:</p>
+        <div class="timer-box glass-card" data-aos="zoom-in">
+            <div class="time-item">
+                <span id="days" class="time-val">00</span>
+                <span class="time-lbl">Дней</span>
+            </div>
+            <div class="time-item">
+                <span id="hours" class="time-val">00</span>
+                <span class="time-lbl">Часов</span>
+            </div>
+            <div class="time-item">
+                <span id="minutes" class="time-val">00</span>
+                <span class="time-lbl">Минут</span>
+            </div>
+            <div class="time-item">
+                <span id="seconds" class="time-val">00</span>
+                <span class="time-lbl">Секунд</span>
+            </div>
+        </div>
+        <p style="font-size:1.3rem; margin-top: 40px; text-align:center; font-style:italic;" data-aos="fade-up">И с каждой секундой я влюбляюсь в тебя всё сильнее 💖</p>
+    </section>
+
+    <!-- 3D Cards Section -->
+    <section class="reasons" id="reasons">
+        <h2 class="section-title" data-aos="fade-down">Почему ты особенная</h2>
+        <div class="cards-container">
+            <div class="reason-card glass-card" data-aos="flip-left" data-aos-delay="100">
+                <div class="card-icon"><i class="fas fa-heart"></i></div>
+                <h3>Твоя доброта</h3>
+                <p>Твое сердце излучает тепло, которое согревает меня каждый день.</p>
+            </div>
+            <div class="reason-card glass-card" data-aos="flip-left" data-aos-delay="300">
+                <div class="card-icon"><i class="fas fa-star"></i></div>
+                <h3>Твоя улыбка</h3>
+                <p>Она освещает даже самый мрачный день и заставляет меня забыть обо всех проблемах.</p>
+            </div>
+            <div class="reason-card glass-card" data-aos="flip-left" data-aos-delay="500">
+                <div class="card-icon"><i class="fas fa-infinity"></i></div>
+                <h3>Твоя уникальность</h3>
+                <p>В тебе есть та магия, которую невозможно описать словами. Ты просто одна на миллион.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="story" id="story">
+        <h2 class="section-title" data-aos="fade-down">Наша история</h2>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h3>Первая встреча</h3>
+                    <p>Тот самый момент, когда время остановилось, и я понял, что моя жизнь больше не будет прежней.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h3>Наши долгие разговоры</h3>
+                    <p>Часы пролетали как минуты, когда мы просто без остановки говорили обо всем на свете.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card">
+                    <h3>Сегодня</h3>
+                    <p>Я смотрю на тебя и понимаю, что ты — мой самый ценный подарок судьбы.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clickable Photo Stack Gallery -->
+    <section class="gallery-section" id="gallery">
+        <h2 class="section-title" data-aos="fade-down">Самая красивая девочка во вселенной</h2>
+        <div class="photo-stack" id="photo-stack" data-aos="zoom-in" data-aos-duration="1000">
+            <!-- 8 Image Placeholders -->
+            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=400&q=80" class="stack-item active" alt="Memory 1">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" class="stack-item" alt="Memory 2">
+            <img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&w=400&q=80" class="stack-item" alt="Memory 3">
+            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=400&q=80" class="stack-item" alt="Memory 4">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" class="stack-item" alt="Memory 5">
+            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=400&q=80" class="stack-item" alt="Memory 6">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" class="stack-item" alt="Memory 7">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=400&q=80" class="stack-item" alt="Memory 8">
+        </div>
+        <p class="gallery-hint" data-aos="fade-up">Просто кликай по фото ❤️</p>
+    </section>
+
+    <!-- БАНОЧКА ПРИЧИН -->
+    <section class="jar-section" id="jar" style="min-height: 70vh;">
+        <h2 class="section-title" data-aos="fade-down">За что я тебя люблю?</h2>
+        <div class="physical-jar-container" data-aos="zoom-in">
+            <p style="font-size: 1.2rem; margin-bottom: 20px; text-align:center;">В этой волшебной баночке собраны десятки причин. Жми на неё! ✨</p>
+            
+            <div class="glass-jar" id="jar-btn">
+                <div class="jar-lid"></div>
+                <div class="jar-body">
+                    <div class="jar-label">100 Причин ❤️</div>
+                    <!-- Decorative hearts inside -->
+                    <div class="pile"></div>
+                </div>
+            </div>
+
+            <div id="jar-note" class="note-hidden">
+                <p id="note-text" style="font-size: 1.4rem; font-weight: 500; font-family: 'Playfair Display', serif; color: #a60039;"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Interactive Gift -->
+    <section class="gift-section" id="gift-section">
+        <div class="gift-container glass-card" data-aos="zoom-up" style="max-width: 800px; padding: 60px 40px;">
+            <h2 class="section-title" style="margin-bottom:20px;">Твой главный подарок</h2>
+
+            <!-- МУЛЬТИ-КВЕСТ ТЕРМИНАЛ -->
+            <div id="multi-quest-container" class="glowing-quest-box" data-aos="flip-up" data-aos-duration="1500" style="min-height: 350px;">
+                <i class="fas fa-lock" style="font-size: 3rem; color: #ff6b98; margin-bottom: 15px;"></i>
+                <p style="font-size: 1.3rem; margin-bottom: 20px;">Мой сюрприз скрыт под <b>тройной крипто-защитой!</b> 😉<br>Пройди мини-квест, чтобы доказать, что ты настоящая Айдана.</p>
+                
+                <!-- Dynamic Content Area -->
+                <div id="quest-dynamic-area">
+                    <h3 id="quest-q" style="color: var(--secondary); margin-bottom: 15px; font-family: 'Playfair Display', serif; font-size: 1.8rem;"></h3>
+                    <div id="quest-hint" class="quest-hint"></div>
+                    
+                    <!-- Text Input Mode -->
+                    <div id="quest-text-mode" style="display: none;">
+                        <input type="text" id="multi-quest-input" placeholder="Ваш ответ..." class="fancy-input">
+                    </div>
+                    
+                    <!-- Choices Mode -->
+                    <div id="quest-choice-mode" style="display: none; flex-direction: column; gap: 15px; align-items: center; width: 100%;">
+                        <!-- Buttons injected here by JS -->
+                    </div>
+                    
+                    <br>
+                    <button id="multi-quest-btn" class="glass-btn" style="margin-top: 25px; padding: 12px 40px; font-size: 1.3rem;">Ответить 🔓</button>
+                    <p id="multi-quest-error" style="color: #ff4e85; margin-top: 15px; font-weight: bold; font-size:1.1rem; display: none;">Неверно! Попробуй еще раз ❤️</p>
+                </div>
+                
+                <!-- Success transition area -->
+                <div id="quest-stage-success" style="display: none; flex-direction: column; align-items: center;">
+                    <i class="fas fa-check-circle" style="font-size: 4.5rem; color: #00ff88; margin-bottom: 20px; text-shadow: 0 0 20px #00ff88; animation: bounce 1s infinite;"></i>
+                    <h3 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">Взломано!</h3>
+                    <p style="font-size: 1.2rem; color: #fff; margin-bottom: 25px;">Уровень успешно пройден!</p>
+                    <button id="next-stage-btn" class="glass-btn" style="padding: 15px 40px; font-size: 1.3rem;">Следующий уровень ➡️</button>
+                </div>
+            </div>
+
+            <!-- БИОМЕТРИЯ (скрыта изначально) -->
+            <div id="biometrics-container" style="display: none; margin-top: 40px;">
+                <p style="font-size: 1.2rem; margin-bottom: 30px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px;">Сканер активирован...<br>Удерживай кнопку в течение 3 секунд.</p>
+                <div class="hold-button-container">
+                    <svg class="progress-ring" width="140" height="140">
+                        <circle class="progress-ring__circle" stroke="rgba(255,107,152,0.9)" stroke-width="8" fill="transparent" r="60" cx="70" cy="70"/>
+                    </svg>
+                    <button id="hold-btn" class="pulse-btn"><i class="fas fa-fingerprint"></i></button>
+                </div>
+                <p id="hold-text" style="font-size: 1.2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Удерживай!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Gift -->
+    <div id="gift-modal" class="modal">
+        <div class="modal-content glass-card" style="padding: 50px 30px;">
+            <span class="close-modal">&times;</span>
+            <h2 class="wow-title" style="font-size:3.5rem;">Сюрприз! 🎉</h2>
+            <p class="wow-text wow-intro" style="margin-bottom: 20px;">
+                Родная моя, я знаю, что у тебя есть проблемы с зубками, а мне так хочется, чтобы твоя улыбка всегда сияла и ты была абсолютно здорова! Поэтому...
+            </p>
+            
+            <div class="envelope-wrapper" id="envelope">
+                <div class="envelope">
+                    <div class="envelope-back"></div>
+                    <div class="letter">
+                        <h3 style="color:#a60039; font-size:1.5rem; margin-bottom:5px;">👑 Сертификат 👑</h3>
+                        <p style="color:#333; font-weight:600;">На роскошную улыбку и лечение зубов у лучшего стоматолога!</p>
+                        <i class="fas fa-tooth" style="color:#ff6b98; font-size:2rem; margin-top:10px;"></i>
+                    </div>
+                    <div class="envelope-left"></div>
+                    <div class="envelope-right"></div>
+                    <div class="envelope-front"></div>
+                    <div class="envelope-flap"></div>
+                </div>
+            </div>
+            
+            <p class="wow-text" style="margin-top: 20px;">
+                Я всё оплачу, главное — будь здорова!<br>Безумно тебя люблю! ❤️
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
